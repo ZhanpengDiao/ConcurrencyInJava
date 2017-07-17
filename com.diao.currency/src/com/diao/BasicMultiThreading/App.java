@@ -39,7 +39,8 @@ class Runner2 extends Thread{
 
 public class App {
 
-    public static void main(String[] args) {
+    // main/application thread
+    public static void main(String[] args) throws InterruptedException {
 
         // initiate thread
 //        Thread thread1 = new Thread(new Runner1());
@@ -53,6 +54,11 @@ public class App {
         runner1.start();
         runner2.start();
 
+        // wait for the thread to die
+        runner1.join();
+        runner2.join();
+
+        System.out.println("All tasks finished.");
     }
 }
 
