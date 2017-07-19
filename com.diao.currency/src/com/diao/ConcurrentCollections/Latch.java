@@ -44,7 +44,7 @@ public class Latch {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
         CountDownLatch latch = new CountDownLatch(5);
-        for(int i = 0; i < 6; i ++) {
+        for(int i = 0; i < 5; i ++) {
             executorService.execute(new Worker(i + 1, latch));
         }
 
